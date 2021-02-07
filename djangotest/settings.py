@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import socket
 
+SECRET_KEY = '@yce&^=ue^lqa_w)wa1mc$d_y8qm74gdqwh+es_(^awggc0$+b'
+
 hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 
