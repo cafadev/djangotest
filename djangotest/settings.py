@@ -11,22 +11,21 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import socket
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+
+DEBUG = local_ip != '199.188.205.87'
+
+if DEBUG:
+    import dev
+else:
+    import prod
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@yce&^=ue^lqa_w)wa1mc$d_y8qm74gdqwh+es_(^awggc0$+b'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['digitasguatemala.com']
-
+# SECRET_KEY = '@yce&^=ue^lqa_w)wa1mc$d_y8qm74gdqwh+es_(^awggc0$+b'
 
 # Application definition
 
@@ -73,12 +72,12 @@ WSGI_APPLICATION = 'djangotest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
