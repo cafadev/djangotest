@@ -19,9 +19,9 @@ local_ip = socket.gethostbyname(hostname)
 DEBUG = local_ip != '199.188.205.87'
 
 if DEBUG:
-    import dev
+    from . import dev
 else:
-    import prod
+    from . import prod
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
