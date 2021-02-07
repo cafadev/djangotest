@@ -4,6 +4,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'digixwwg_djangotestdb',
         'USER': 'digixwwg_django',
-        'PASSWORD': 'djangotest123'
+        'PASSWORD': 'djangotest123',
+        'HOST': 'localhost'
     }
 }
